@@ -6,5 +6,6 @@ read ip_list
 
 for i in $(cat $ip_list)
 do
-    nmap -A -T3 $i -oA All_scan_basic_$i -Pn
+    mkdir output/$i/
+    nmap -T3 $i -oA output/$i/All_scan_basic_$i -Pn -p-
 done
